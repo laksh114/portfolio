@@ -26,8 +26,8 @@ export default function ProjectCard({ project }) {
 
     setTransformStyle(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`);
     setShadowStyle(`0 20px 40px rgba(0, 0, 0, 0.4), 
-      ${-normalizedX * 15}px ${-normalizedY * 15}px 30px rgba(6, 182, 212, 0.1),
-      ${normalizedX * 15}px ${normalizedY * 15}px 30px rgba(139, 92, 246, 0.1)`);
+      ${-normalizedX * 15}px ${-normalizedY * 15}px 30px rgba(16, 185, 129, 0.1),
+      ${normalizedX * 15}px ${normalizedY * 15}px 30px rgba(20, 184, 166, 0.1)`);
   };
 
   const handleMouseLeave = () => {
@@ -83,7 +83,7 @@ export default function ProjectCard({ project }) {
         
         {/* Category Badge */}
         <div className="absolute top-4 left-4 flex gap-2">
-          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-medium uppercase tracking-wider bg-[#030014]/80 text-cyan-400 border border-cyan-500/20 backdrop-blur-md">
+          <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-mono font-medium uppercase tracking-wider bg-[#060913]/80 text-cyan-400 border border-cyan-500/20 backdrop-blur-md">
             <Layers size={10} />
             {project?.category}
           </span>
@@ -127,7 +127,7 @@ export default function ProjectCard({ project }) {
 
         {/* Actions Button Bar */}
         <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-          {project?.githubUrl && project?.githubUrl !== '#' ? (
+          {project?.githubUrl && project?.githubUrl !== '#' && (
             <a
               href={project.githubUrl}
               target="_blank"
@@ -137,13 +137,9 @@ export default function ProjectCard({ project }) {
             >
               <Github size={16} />
             </a>
-          ) : (
-            <div className="p-2 border border-white/3 opacity-30 text-gray-600 rounded-lg cursor-not-allowed" title="Repo Private / Offline">
-              <Github size={16} />
-            </div>
           )}
 
-          {project?.liveDemoUrl && project?.liveDemoUrl !== '#' ? (
+          {project?.liveDemoUrl && project?.liveDemoUrl !== '#' && (
             <a
               href={project.liveDemoUrl}
               target="_blank"
@@ -153,15 +149,11 @@ export default function ProjectCard({ project }) {
             >
               <ExternalLink size={16} />
             </a>
-          ) : (
-            <div className="p-2 border border-white/3 opacity-30 text-gray-600 rounded-lg cursor-not-allowed" title="Demo Offline">
-              <ExternalLink size={16} />
-            </div>
           )}
 
           <Link
             to={`/project/${project?.slug}`}
-            className="ml-auto flex items-center gap-1 px-3 py-2 bg-white/5 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-purple-500 text-white rounded-lg text-xs font-space font-medium tracking-wide uppercase transition-all duration-300 cursor-pointer"
+            className="ml-auto flex items-center gap-1 px-3 py-2 bg-white/5 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-teal-500 text-white rounded-lg text-xs font-space font-medium tracking-wide uppercase transition-all duration-300 cursor-pointer"
           >
             Details
             <ArrowRight size={12} />
