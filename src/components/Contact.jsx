@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // 2. Create a new form, name it (e.g. "Portfolio Contact"), and set the target email to: lakshjangid41@gmail.com
 // 3. Formspree will give you an ID (it looks like a short code, e.g. "mvolepzv").
 // 4. Paste that ID below replacing "YOUR_FORM_ID".
-const FORMSPREE_FORM_ID = "YOUR_FORM_ID";
+const FORMSPREE_FORM_ID = "meeyeelw";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
