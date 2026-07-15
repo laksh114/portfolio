@@ -4,20 +4,20 @@ export default function LoadingScreen({ onComplete }) {
   const [phase, setPhase] = useState(0); // 0: LJ, 1: Laksh Jangid, 2: Fade Out
 
   useEffect(() => {
-    // Stage 1: Transition "LJ" to "Laksh Jangid" after 1.2s
+    // Stage 1: Transition "LJ" to "Laksh Jangid" after 400ms (fast transition)
     const timer1 = setTimeout(() => {
       setPhase(1);
-    }, 1200);
+    }, 400);
 
-    // Stage 2: Slide and Fade out the overlay container after 2.8s
+    // Stage 2: Slide and Fade out the overlay container after 1100ms
     const timer2 = setTimeout(() => {
       setPhase(2);
-    }, 2800);
+    }, 1100);
 
-    // Stage 3: Notify parent component that loading is done after 3.5s
+    // Stage 3: Notify parent component that loading is done after 1500ms (total 1.5s)
     const timer3 = setTimeout(() => {
       onComplete();
-    }, 3500);
+    }, 1500);
 
     return () => {
       clearTimeout(timer1);
@@ -28,7 +28,7 @@ export default function LoadingScreen({ onComplete }) {
 
   return (
     <div
-      className={`fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#060913] select-none transition-all duration-1000 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+      className={`fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#060913] select-none transition-all duration-700 ease-[cubic-bezier(0.76,0,0.24,1)] ${
         phase === 2 ? 'opacity-0 -translate-y-24 pointer-events-none' : 'opacity-100'
       }`}
     >
@@ -43,7 +43,7 @@ export default function LoadingScreen({ onComplete }) {
               LJ
             </h1>
           ) : (
-            <h1 className="text-4xl md:text-6xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-400 font-space drop-shadow-[0_0_20px_rgba(52,211,153,0.3)] transition-all duration-700 ease-out transform scale-100 animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-400 font-space drop-shadow-[0_0_20px_rgba(52,211,153,0.3)] transition-all duration-500 ease-out transform scale-100 animate-fade-in">
               Laksh Jangid
             </h1>
           )}
@@ -52,7 +52,7 @@ export default function LoadingScreen({ onComplete }) {
         {/* Loading Progress Bar */}
         <div className="w-[180px] md:w-[260px] h-[2px] bg-white/5 mt-8 rounded-full overflow-hidden relative">
           <div
-            className="absolute top-0 bottom-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 shadow-[0_0_10px_#10b981] transition-all duration-[3200ms] ease-out"
+            className="absolute top-0 bottom-0 bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 shadow-[0_0_10px_#10b981] transition-all duration-[1300ms] ease-out"
             style={{
               left: phase === 0 ? '-100%' : '100%',
               width: '60%'
