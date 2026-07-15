@@ -11,14 +11,14 @@ export const projects = [
     fullDescription: "This project aims to help retail stores optimize their inventory and staffing by forecasting future sales. By analyzing historical transaction data, the system identifies seasonal trends, promotional impacts, and store-specific behaviors, applying machine learning models to forecast demand with high accuracy.",
     category: "Data Science",
     technologies: ["Python", "Pandas", "Matplotlib", "Scikit-Learn", "Jupyter Notebook"],
-    image: "https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=800&auto=format&fit=crop", // placeholder image
+    image: "https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=800&auto=format&fit=crop",
     screenshots: [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
     ],
     status: "Completed",
-    githubUrl: "https://github.com/laksh114/Real-World-Data-Science-Project-Retail-Sales-Analysis-Prediction-Project-", // Placeholder / custom repo link
-    liveDemoUrl: "#", // Add your demo link here
+    githubUrl: "https://github.com/laksh114/Real-World-Data-Science-Project-Retail-Sales-Analysis-Prediction-Project-",
+    liveDemoUrl: "#",
     features: [
       "Exploratory Data Analysis (EDA) of transaction datasets",
       "Handling missing data, outliers, and data cleaning routines",
@@ -42,8 +42,8 @@ export const projects = [
       "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=800&auto=format&fit=crop"
     ],
     status: "Completed",
-    githubUrl: "https://github.com/laksh114/smart-todo-list", // Replace with real link
-    liveDemoUrl: "https://laksh114.github.io/smart-todo-list", // Replace with real link
+    githubUrl: "https://github.com/laksh114/smart-todo-list",
+    liveDemoUrl: "https://laksh114.github.io/smart-todo-list",
     features: [
       "Auto-generated unique Task IDs for tracking",
       "Create, Read, Update, and Delete (CRUD) tasks",
@@ -68,7 +68,7 @@ export const projects = [
       "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop"
     ],
     status: "Completed",
-    githubUrl: "https://github.com/laksh114/data-cleaning-visualization", // Replace with real link
+    githubUrl: "https://github.com/laksh114/data-cleaning-visualization",
     liveDemoUrl: "#",
     features: [
       "Automated scripts to find and delete duplicated records",
@@ -82,54 +82,6 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Arduino Radar System",
-    slug: "arduino-radar-system",
-    description: "A radar system built using Arduino, an ultrasonic sensor, and a servo motor to detect nearby objects.",
-    fullDescription: "An engineering and hardware project combining electrical circuits and programming. By rotating an ultrasonic sensor using a servo motor, the system scans a 180-degree sweep area, detecting object distances and plotting them on a radar interface.",
-    category: "Arduino / IoT",
-    technologies: ["Arduino UNO", "Ultrasonic Sensor (HC-SR04)", "Servo Motor", "Processing IDE"],
-    image: "https://images.unsplash.com/photo-1557853197-aefb550b6fdc?q=80&w=800&auto=format&fit=crop",
-    screenshots: [
-      "https://images.unsplash.com/photo-1517059224940-d4af9eec41b7?q=80&w=800&auto=format&fit=crop"
-    ],
-    status: "Completed",
-    githubUrl: "https://github.com/laksh114/arduino-radar", // Replace with real link
-    liveDemoUrl: "#",
-    features: [
-      "Continuous 180-degree sweep using a micro servo",
-      "Distance measurement up to 40cm using ultrasonic sonar waves",
-      "Buzzer warning alarms when objects enter critical thresholds",
-      "Processing IDE display showing detected coordinates in a retro green radar screen style"
-    ],
-    challenges: "Calibrating the delay of the servo motor sweep to allow the ultrasonic sensor enough time to send and receive echo pulses without causing coordinate mismatches in the visualizer.",
-    learnings: "Gained knowledge about microcontrollers, pulse width modulation (PWM), sonar wave calculations, and serial communication (UART) between Arduino and a computer."
-  },
-  {
-    id: 5,
-    title: "Bluetooth Controlled Robot Car",
-    slug: "bluetooth-controlled-car",
-    description: "A four-wheel robot car controlled through Bluetooth using an Android app.",
-    fullDescription: "A smart hardware project designed to implement wireless communication. The robot utilizes an Arduino micro-controller, motor drivers, and a Bluetooth module to receive directions from a smartphone application.",
-    category: "Arduino / IoT",
-    technologies: ["Arduino UNO", "HC-05 Bluetooth Module", "L298N Motor Driver", "DC Motors", "C++"],
-    image: "https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?q=80&w=800&auto=format&fit=crop",
-    screenshots: [
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop"
-    ],
-    status: "Completed",
-    githubUrl: "https://github.com/laksh114/bluetooth-robot-car", // Replace with real link
-    liveDemoUrl: "#",
-    features: [
-      "Four-wheel drive chassis with independent DC motors",
-      "Bluetooth coupling range up to 10 meters using HC-05 module",
-      "Custom Android interface controls (Forward, Backward, Left, Right, Stop)",
-      "Speed regulation through pulse width modulation (PWM) commands"
-    ],
-    challenges: "Managing power distribution. The DC motors would occasionally draw too much current, causing the Arduino board to reset. Solved by separating the motor power circuit (using 18650 batteries) from the logic circuit.",
-    learnings: "I learned how to configure serial communication, handle high-current motor drivers safely, and troubleshoot basic electrical hardware issues."
-  },
-  {
-    id: 6,
     title: "Exploratory Data Analysis",
     slug: "exploratory-data-analysis",
     description: "A data exploration project focusing on extracting key insights and relationships from raw datasets.",
@@ -139,7 +91,7 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop",
     screenshots: [],
     status: "Completed",
-    githubUrl: "https://github.com/laksh114/exploratory-data-analysis", // Replace with real link
+    githubUrl: "https://github.com/laksh114/exploratory-data-analysis",
     liveDemoUrl: "#",
     features: [
       "Profiling datasets (shape, columns, null check, memory use)",
@@ -151,7 +103,7 @@ export const projects = [
     learnings: "Learned how to apply data visualization principles (choosing the right chart types, handling overlapping plots, using proper palettes) to convey numerical ideas effectively."
   },
   {
-    id: 7,
+    id: 5,
     title: "Predictive Modeling Using Machine Learning",
     slug: "predictive-modeling-ml",
     description: "Creating regression and classification models to predict target metrics based on historic datasets.",
@@ -161,7 +113,7 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?q=80&w=800&auto=format&fit=crop",
     screenshots: [],
     status: "Completed",
-    githubUrl: "https://github.com/laksh114/predictive-modeling-ml", // Replace with real link
+    githubUrl: "https://github.com/laksh114/predictive-modeling-ml",
     liveDemoUrl: "#",
     features: [
       "Splitting datasets into training, validation, and test subsets",
@@ -173,7 +125,7 @@ export const projects = [
     learnings: "Understood the concept of bias-variance tradeoff, the importance of cross-validation, and how hyperparameters like max_depth control model complexity."
   },
   {
-    id: 8,
+    id: 6,
     title: "Cafe Order Management Website",
     slug: "cafe-order-management",
     description: "A front-end restaurant/cafe portal website allowing clients to view menus, add items to cart, and place mock orders.",
@@ -183,7 +135,7 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=800&auto=format&fit=crop",
     screenshots: [],
     status: "Learning Project",
-    githubUrl: "https://github.com/laksh114/cafe-order-management", // Replace with real link
+    githubUrl: "https://github.com/laksh114/cafe-order-management",
     liveDemoUrl: "#",
     features: [
       "Filterable menu items (Coffee, Drinks, Snacks, Desserts)",
@@ -195,7 +147,7 @@ export const projects = [
     learnings: "Deepened my skills in CSS Flexbox/Grid layouts, DOM traversal, and tracking cart states in a centralized JS array."
   },
   {
-    id: 9,
+    id: 7,
     title: "Interactive Developer Portfolio",
     slug: "interactive-developer-portfolio",
     description: "My personal developer portfolio website featuring custom glassmorphism, 3D particle spheres, and smooth scroll transitions.",
@@ -205,8 +157,8 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
     screenshots: [],
     status: "In Progress",
-    githubUrl: "https://github.com/laksh114/ai-portfolio", // Replace with real link
-    liveDemoUrl: "https://laksh114.github.io/ai-portfolio", // Replace with real link
+    githubUrl: "https://github.com/laksh114/portfolio",
+    liveDemoUrl: "#",
     features: [
       "Cinematic intro loading sequence",
       "3D particle-emitting interactive data sphere built with Three.js",
@@ -218,7 +170,7 @@ export const projects = [
     learnings: "I learned how to integrate Three.js in a React lifecycle, utilize Framer Motion hooks for layout changes, and structure clean Tailwind utility configurations."
   },
   {
-    id: 10,
+    id: 8,
     title: "Voice Command Virtual Assistant",
     slug: "voice-command-assistant",
     description: "A desktop voice assistant program built in Python that executes speech commands, searches the web, and answers queries.",
@@ -228,7 +180,7 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1527474305487-b87b222841cc?q=80&w=800&auto=format&fit=crop",
     screenshots: [],
     status: "Learning Project",
-    githubUrl: "https://github.com/laksh114/jarvis-ai-python", // Replace with real link
+    githubUrl: "https://github.com/laksh114/jarvis-ai-python",
     liveDemoUrl: "#",
     features: [
       "Speech-to-Text conversion using online and offline speech engines",

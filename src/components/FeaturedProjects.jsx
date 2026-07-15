@@ -1,21 +1,13 @@
 import React from 'react';
 import { projects } from '../data/projects';
 import ProjectCard from './ProjectCard';
-import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Featured project IDs
-const FEATURED_IDS = [1, 2, 4, 5];
+// Featured project IDs (1: Retail Sales, 2: To-Do List, 3: Data Cleaning, 8: Voice Assistant)
+const FEATURED_IDS = [1, 2, 3, 8];
 
 export default function FeaturedProjects() {
   const featured = projects.filter(p => FEATURED_IDS.includes(p.id));
-
-  const handleScrollToArchive = () => {
-    const el = document.getElementById('project-list');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="projects" className="py-20 bg-[#060913]/60 relative overflow-hidden">
@@ -35,7 +27,7 @@ export default function FeaturedProjects() {
         </div>
 
         {/* Featured Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {featured.map((project, i) => (
             <motion.div
               key={project.id}
@@ -48,23 +40,6 @@ export default function FeaturedProjects() {
             </motion.div>
           ))}
         </div>
-
-        {/* Action Button */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex justify-center"
-        >
-          <button
-            onClick={handleScrollToArchive}
-            className="group flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-emerald-500/40 hover:bg-emerald-500/5 text-gray-400 hover:text-white rounded-full font-space text-xs tracking-widest uppercase transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.02)]"
-          >
-            View All Projects
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-          </button>
-        </motion.div>
       </div>
     </section>
   );
