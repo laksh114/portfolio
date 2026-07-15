@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { Mail, Github, Linkedin, MapPin, Send, AlertCircle, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// TO RECEIVE REAL EMAIL MESSAGES IN YOUR INBOX:
+// 1. Go to https://formspree.io/ and create a free account.
+// 2. Create a new form, name it (e.g. "Portfolio Contact"), and set the target email to: lakshjangid41@gmail.com
+// 3. Formspree will give you an ID (it looks like a short code, e.g. "mvolepzv").
+// 4. Paste that ID below replacing "YOUR_FORM_ID".
+const FORMSPREE_FORM_ID = "YOUR_FORM_ID";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -39,7 +46,7 @@ export default function Contact() {
     }
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     
     // Validation checks
@@ -64,21 +71,62 @@ export default function Contact() {
 
     setIsSubmitting(true);
     
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setShowSuccess(true);
-      
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      
+    // Check if user set up Formspree
+    if (FORMSPREE_FORM_ID === "YOUR_FORM_ID") {
+      // Simulation mode fallback
       setTimeout(() => {
-        setShowSuccess(false);
-      }, 5000);
-    }, 1800);
+        setIsSubmitting(false);
+        setShowSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        setTimeout(() => {
+          setShowSuccess(false);
+        }, 5000);
+      }, 1500);
+      return;
+    }
+
+    // Real API submission to Formspree
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          _subject: `Portfolio Contact: ${formData.subject}`,
+          message: formData.message
+        })
+      });
+
+      if (response.ok) {
+        setIsSubmitting(false);
+        setShowSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        setTimeout(() => {
+          setShowSuccess(false);
+        }, 5000);
+      } else {
+        alert("Failed to send message. Please check your Formspree ID or try again later.");
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An network error occurred. Please try again later.");
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -113,8 +161,8 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">Email Me</p>
-                <a href="mailto:laksh@example.com" className="text-sm font-space text-gray-200 hover:text-emerald-400 transition-colors">
-                  laksh@example.com
+                <a href="mailto:lakshjangid41@gmail.com" className="text-sm font-space text-gray-200 hover:text-emerald-400 transition-colors">
+                  lakshjangid41@gmail.com
                 </a>
               </div>
             </div>
